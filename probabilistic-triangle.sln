@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "probabilistic-triangle", "probabilistic-triangle.vcxproj", "{BC508338-C45C-4414-8FAA-082435DC6436}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Debug|x64.ActiveCfg = Debug|x64
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Debug|x64.Build.0 = Debug|x64
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Debug|x86.Build.0 = Debug|Win32
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Release|x64.ActiveCfg = Release|x64
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Release|x64.Build.0 = Release|x64
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Release|x86.ActiveCfg = Release|Win32
+		{BC508338-C45C-4414-8FAA-082435DC6436}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECDBAE7B-37D8-46B1-A2AB-EE57059BCA3C}
+	EndGlobalSection
+EndGlobal
