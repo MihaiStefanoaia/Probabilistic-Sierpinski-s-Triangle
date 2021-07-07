@@ -2,7 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include "button.h"
 
+const float pi = 3.14159;
 sf::Vector2f takeFromFile()
 {
 	std::ifstream cfg;
@@ -15,74 +17,121 @@ sf::Vector2f takeFromFile()
 
 int main()
 {
-	sf::Vector2f sizes(takeFromFile()),div2(2,2),div3(3,3);
-	sf::Vector2f p, p1(sizes.x/2,0), p2(0,sizes.y), p3(sizes);
+	bool exitToken = 0;
+	int nrPoints=3;
+	sf::Vector2f sizes(takeFromFile());
+	sf::Vector2f p, * points;
 
-	p = p1 + p2;
-	p /= 2.0f;
-
-	sf::RenderWindow window(sf::VideoMode(1000,1000), "Probabilistic Sierpinski's Triangle", sf::Style::Default);
-	sf::RectangleShape pixel(sf::Vector2f(1.0f, 1.0f));
-	sf::RenderTexture tex;
-	
 	sf::RectangleShape background(sf::Vector2f(sizes.x, sizes.y));
-	background.setFillColor(sf::Color::Black);
-	pixel.setFillColor(sf::Color::White);
+	background.setFillColor(sf::Color(31,31,31,255));
 	
-	tex.create(sizes.x, sizes.y);
-	tex.draw(background);
-	pixel.setPosition(p1);
-	tex.draw(pixel);
-	pixel.setPosition(p2);
-	tex.draw(pixel);
-	pixel.setPosition(p3);
-	tex.draw(pixel);
-	tex.display();
 
-	sf::Sprite sprite(tex.getTexture());
-	sf::Vector2u scaleTemp=window.getSize();
-	sf::Vector2f scl((float)scaleTemp.x, (float)scaleTemp.y);
-	scl.x /= sizes.x;
-	scl.y /= sizes.y;
-	sprite.setScale(scl);
-
-	while (window.isOpen())
+	while (!exitToken)
 	{
-		sf::Event evnt;
-		window.pollEvent(evnt);
-		if (evnt.type == sf::Event::Closed)
+		//needs to be modified a ~~bit~~ lot
+		
+		sf::RenderWindow initialConfig(sf::VideoMode(500, 300), "Configuration", sf::Style::Default);
+		button exit(25,200,225,300,"Exit"), start(275, 200, 475, 300,"Start");
+
+		/*
+		while (initialConfig.isOpen())
 		{
-			tex.getTexture().copyToImage().saveToFile("Probabilistic Sierpinski's Triangle.png");
-			window.close();
-		}
-		int k = rand()%3;
+			
+			sf::Event evnt;
+			initialConfig.pollEvent(evnt);
+			switch (evnt.type)
+			{
+			case sf::Event::Closed:
+				exitToken = true;
+				initialConfig.close();
+				break;
+			case sf::Event::MouseButtonPressed:
+				if (exit.isPressed(initialConfig))
+				{
+					exitToken = true;
+					initialConfig.close();
+				}
+				if (start.isPressed(initialConfig))
+				{
+					initialConfig.close();
+				}
+				break;
 
-		switch (k)
+			}
+
+			initialConfig.draw(sf::Sprite(exit.getTexture().getTexture()));
+
+		}
+		*/
+		
+		do {
+			std::cin >> nrPoints;//temporary
+		} while (nrPoints < 3);
+		exitToken = true;//also temporary
+
+		sf::RenderWindow window(sf::VideoMode(1000, 1000), "Probabilistic Fractal", sf::Style::Default);
+		sf::RectangleShape pixel(sf::Vector2f(1.0f, 1.0f));
+		sf::RenderTexture tex;
+
+
+		pixel.setFillColor(sf::Color::White);
+
+		tex.create(sizes.x, sizes.y);
+		tex.draw(background);
+
+		points = new sf::Vector2f[nrPoints];
+
+		for (int i = 0; i < nrPoints; i++)
 		{
-		case 0:
-			p += p1;
-			break;
-		case 1:
-			p += p2;
-			break;
-		case 2:
-			p += p3;
-			break;
+			points[i] = sf::Vector2f(sizes.x/2 + (sizes.x/2) * sin( 2.0*pi*i / nrPoints ), sizes.y/2 + (sizes.y/2) * -cos((2*pi*i) /nrPoints));
 		}
-		p /= 2.0f;
 
-		pixel.setPosition(p);
+		p = points[0];
 
+		for (int i = 0; i < nrPoints; i++)
+		{
+			pixel.setPosition(points[i]);
+			tex.draw(pixel);
+		}
 
-		tex.draw(pixel);
 		tex.display();
-		window.draw(sprite);
-		//window.draw(pixel);
-		window.display();
-		//window.draw(pixel);
-	}
 
-	
+		sf::Sprite sprite(tex.getTexture());
+		sf::Vector2u scaleTemp = window.getSize();
+		sf::Vector2f scl((float)scaleTemp.x, (float)scaleTemp.y);
+		scl.x /= sizes.x;
+		scl.y /= sizes.y;
+		sprite.setScale(scl);
+
+		while (window.isOpen())
+		{
+			sf::Event evnt;
+			window.pollEvent(evnt);
+			if (evnt.type == sf::Event::Closed)
+			{
+				std::string filename("outputs/Probabilistic Fractal ");
+				filename += std::to_string(nrPoints);
+				filename += " Sides.png";
+				tex.getTexture().copyToImage().saveToFile(filename);
+				window.close();
+			}
+
+			int k = rand() % nrPoints;
+			//for(int i=0;i<nrPoints-2;i++)
+			p += points[k] * float(nrPoints-2.0f);
+			p /= (float)nrPoints-1;
+
+			pixel.setPosition(p);
+
+
+			tex.draw(pixel);
+			tex.display();
+			window.draw(sprite);
+			//window.draw(pixel);
+			window.display();
+			//window.draw(pixel);
+		}
+	}
 
 	return 0;
 }
