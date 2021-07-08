@@ -21,9 +21,15 @@
     <ClCompile Include="button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="textInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="textInput.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

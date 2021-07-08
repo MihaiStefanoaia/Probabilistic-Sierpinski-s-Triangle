@@ -3,13 +3,19 @@
 #include <string>
 
 
-class button
+class button : public sf::Drawable
 {
 	sf::Vector2f topLeft, bottomRight;
 	sf::RenderTexture texture;
-	sf::Text text;
+	sf::Sprite sprt;
+	sf::Text txt;
+	char alignment[3];
 public:
-	button(int x1, int y1, int x2, int y2, std::string text);
+	button(sf::Vector2f position, sf::Vector2f size, std::string text, const char alignment[], bool debugMode = 0);
 	bool isPressed(sf::RenderWindow& window);
-	sf::RenderTexture& getTexture();
+	void setString(sf::String str);
+
+private:
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	void updateSprite(bool debugMode = 0);
 };
