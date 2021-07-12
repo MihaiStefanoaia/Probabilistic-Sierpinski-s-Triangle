@@ -19,6 +19,9 @@ private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void updateSprite();
 
+
+
+
 public:
 	textInput(sf::Vector2f position, sf::Vector2f size, sf::Vector2f inputPos, sf::Vector2f inputSize, std::string descriptionText, const char alignment[]="LC", bool debugMode = 0);
 	void addText(std::string input);
@@ -26,6 +29,11 @@ public:
 	bool isEmptyString();
 	sf::Vector2f getValue();
 	void isPresed(sf::RenderWindow& window);
+	
+	const sf::Vector2f getPosition();
+	const sf::Vector2f getSize();
+	const sf::Vector2f getInputPosition();
+	const sf::Vector2f getInputSize();
 
 
 };

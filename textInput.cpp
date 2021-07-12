@@ -129,3 +129,23 @@ sf::Vector2f textInput::getValue()
 	std::cout << out<<"\n";
 	return sf::Vector2f(out, out);
 }
+
+const sf::Vector2f textInput::getPosition()
+{
+	return this->topLeft;
+}
+
+const sf::Vector2f textInput::getSize()
+{
+	return this->bottomRight - this->topLeft;
+}
+
+const sf::Vector2f textInput::getInputPosition()
+{
+	return this->inputTopLeft;
+}
+
+const sf::Vector2f textInput::getInputSize()
+{
+	return this->inputBottomRight - this->inputTopLeft;
+}
