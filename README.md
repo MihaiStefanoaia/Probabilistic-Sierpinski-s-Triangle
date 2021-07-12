@@ -10,12 +10,12 @@ Output examples:
 
 canvas size: 3000x3000 px | window size: irrelevant | number of points: 3
 
-![alt text][https://raw.githubusercontent.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/main/outputs/Probabilistic%20Fractal%203%20Sides%203000x3000.png]
+![alt text][https://raw.githubusercontent.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/main/outputs/Probabilistic%20Fractal%203%20Sides%203000x3000.png "3 sides"]
 
 canvas size: 3000x3000 px | window size: irrelevant | number of points: 4
 
-![alt text][https://raw.githubusercontent.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/main/outputs/Probabilistic%20Fractal%204%20Sides%203000x3000.png]
+![alt text][https://raw.githubusercontent.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/main/outputs/Probabilistic%20Fractal%204%20Sides%203000x3000.png "4 sides"]
 
 canvas size: 3000x3000 px | window size: irrelevant | number of points: 5
 
-![alt text][https://raw.githubusercontent.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/main/outputs/Probabilistic%20Fractal%204%20Sides%203000x3000.png]
+![alt text][https://raw.githubusercontent.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/main/outputs/Probabilistic%20Fractal%204%20Sides%203000x3000.png "5 sides"]
