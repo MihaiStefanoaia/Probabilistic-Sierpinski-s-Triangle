@@ -10,6 +10,10 @@ Output examples:
 
 canvas size: 3000x3000 px | window size: irrelevant | number of points: 3
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 ![alt text](https://github.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/tree/main/outputs/Probabilistic%20Fractal%203%20Sides%203000x3000.png "3 sides")
 
 canvas size: 3000x3000 px | window size: irrelevant | number of points: 4
@@ -19,3 +23,17 @@ canvas size: 3000x3000 px | window size: irrelevant | number of points: 4
 canvas size: 3000x3000 px | window size: irrelevant | number of points: 5
 
 ![alt text](https://github.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/tree/main/outputs/Probabilistic%20Fractal%204%20Sides%203000x3000.png "5 sides")
+<<<<<<< Updated upstream
+=======
+=======
+![alt text][https://github.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/tree/main/outputs/Probabilistic%20Fractal%203%20Sides%203000x3000.png "3 sides"]
+
+canvas size: 3000x3000 px | window size: irrelevant | number of points: 4
+
+![alt text][https://github.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/tree/main/outputs/Probabilistic%20Fractal%204%20Sides%203000x3000.png "4 sides"]
+
+canvas size: 3000x3000 px | window size: irrelevant | number of points: 5
+
+![alt text][https://github.com/MihaiStefanoaia/Probabilistic-Sierpinski-s-Triangle/tree/main/outputs/Probabilistic%20Fractal%204%20Sides%203000x3000.png "5 sides"]
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
